@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abylay Kamalbek — Portfolio</title>
+  <meta name="description" content="Portfolio of Abylay Kamalbek, IT student at KBTU. Front-end projects built with HTML, CSS, JavaScript and React.">
+
+
+  <script>
+    (function () {
+      var theme = 'light';
+      try {
+        var saved = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        theme = saved || (prefersDark ? 'dark' : 'light');
+      } catch (e){}
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+  <header class="site-header">
+    <div class="container header__inner">
+
+      <nav id="primary-nav" class="site-nav" data-open="false" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button id="themeToggle" class="btn btn--icon" type="button" aria-label="Switch to dark theme">
+          <span class="theme-icon" aria-hidden="true">🌙</span>
+        </button>
+
+        <button id="navToggle" class="btn btn--icon nav-toggle" type="button"
+                aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+          <span aria-hidden="true">☰</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="container">
+        <h1 id="about-title">Hi, I'm Abylay</h1>
+        <p class="lead">
+          I'm an IT student at KBTU in Almaty, Kazakhstan. This semester I've been learning
+          frontend development — HTML, CSS, JavaScript, and React with TypeScript.
+        </p>
+      </div>
+    </section>
+
+
+    <section id="projects" class="section" aria-labelledby="projects-title">
+      <div class="container">
+        <h2 id="projects-title">Projects</h2>
+        <p class="section__intro">
+          Three builds from this semester
+        </p>
+
+        <div class="projects-grid">
+
+          <article class="card">
+            <p class="card__meta">Figma · Design</p>
+            <h3 class="card__title">Portfolio Design</h3>
+            <p>
+              My first portfolio design made in Figma. I planned the layout, colours
+              and sections before writing any code.
+            </p>
+            <a class="card__link"
+               href="https://github.com/abylaykamalbek26-ui/iwamad-sis1-portfolio"
+               target="_blank" rel="noreferrer">
+              Open design<span class="sr-only"> for Portfolio Design (opens in a new tab)</span>
+              <span aria-hidden="true">&nbsp;&rarr;</span>
+            </a>
+          </article>
+
+          <article class="card">
+            <p class="card__meta">React · TypeScript</p>
+            <h3 class="card__title">React Profile Card</h3>
+            <p>
+              A profile card built in React with TypeScript. It has routing between
+              pages, a like button with shared state, and one test.
+            </p>
+            <a class="card__link"
+               href="https://abylaykamalbek26-ui.github.io/iwamad-practice/"
+               target="_blank" rel="noreferrer">
+              Open site<span class="sr-only"> for React Profile Card (opens in a new tab)</span>
+              <span aria-hidden="true">&nbsp;&rarr;</span>
+            </a>
+          </article>
+
+          <article class="card">
+            <p class="card__meta">CSS · Design system</p>
+            <h3 class="card__title">Design System Practice</h3>
+            <p>
+              Built reusable Button, Card and Tag components from a Figma handoff,
+              using CSS variables as design tokens.
+            </p>
+            <a class="card__link"
+               href="https://github.com/abylaykamalbek26-ui/iwamad-sis1-portfolio"
+               target="_blank" rel="noreferrer">
+              See code<span class="sr-only"> for Design System Practice (opens in a new tab)</span>
+              <span aria-hidden="true">&nbsp;&rarr;</span>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title">Contact</h2>
+        <p class="section__intro">
+          You can send me a message here or find me on GitHub.
+        </p>
+
+        <div class="contact">
+          <form id="contactForm" class="contact__form" novalidate>
+            <div class="field">
+              <label for="name">Name <span aria-hidden="true">*</span></label>
+              <input type="text" id="name" name="name" autocomplete="name" required
+                     aria-describedby="name-error">
+              <p class="field-error" id="name-error" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label for="email">Email <span aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" autocomplete="email" required
+                     aria-describedby="email-error">
+              <p class="field-error" id="email-error" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label for="message">Message <span aria-hidden="true">*</span></label>
+              <textarea id="message" name="message" rows="5" required
+                        aria-describedby="message-error"></textarea>
+              <p class="field-error" id="message-error" aria-live="polite"></p>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn--primary">Send</button>
+            </div>
+
+            <p id="formStatus" class="form-status" role="status"></p>
+          </form>
+
+          <aside class="contact__aside" aria-label="Other ways to reach me">
+            <h3 class="aside__title">Elsewhere</h3>
+            <ul class="contact-list">
+              <li>
+                <span class="contact-list__label">Email</span>
+                <a href="mailto:ab_kamalbek@KBTU.KZ">ab_kamalbek@KBTU.KZ</a>
+              </li>
+              <li>
+                <span class="contact-list__label">GitHub</span>
+                <a href="https://github.com/abylaykamalbek26-ui" target="_blank" rel="noreferrer">
+                  github.com/ablaykamalbek26-ui
+                </a>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <p>© <span id="year">2026</span> Abylay Kamalbek</p>
+      <p>
+        <a href="mailto:ab_kamalbek@KBTU.KZ">Email</a>
+        <a href="https://github.com/ablaykamalbek26-ui" target="_blank" rel="noreferrer">GitHub</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
